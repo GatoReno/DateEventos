@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DateEventos.InvitarUsers">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10">
+            <Label x:Name="res_x"/>
+            <ListView x:Name="ListUsers" 
+                      CachingStrategy="RetainElement"
+                      ItemTapped="OnSelected"
+
+                      
+                    Margin="10,10,10,10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <StackLayout Spacing="4" >
+                                <StackLayout Orientation="Horizontal">
+
+
+
+                                    <Label Text="Usuario: "  FontSize="12"/>
+                                    <Label x:Name="nxn"
+                                    Text="{Binding nombreusuario}"
+                                    FontSize="Small"
+                                    TextColor="Red"/>
+
+                                    <Label x:Name="Idx"
+                                    Text="{Binding idusuario}"
+                                    FontSize="Small"
+                                    IsVisible="False" 
+                                    TextColor="Red"/>
+
+
+
+                                </StackLayout>
+
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button
+                Text="Listo"
+               Clicked="TerminarInvitaciones"
+                Image="appoimentgrey50.png"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

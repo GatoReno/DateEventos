@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DateEventos.Appoiments">
+    <ContentPage.Content>
+        <StackLayout Margin="20,10,20,20">
+
+
+            <Image
+                Source="appoiment200.png"
+               Margin="0,10,0,0"
+                HeightRequest="90"
+                WidthRequest="90"
+                />
+            <Button 
+                Text="Nueva cita"
+               Image="appoimentadd.png"
+                HeightRequest="50"
+                WidthRequest="50"
+                TextColor="Gray"
+                Clicked="NewAppoiment"
+                />
+
+            <Button
+                Text="Mis citas"
+               Image="appoimentgrey50.png"
+                HeightRequest="50"
+                WidthRequest="50"
+                TextColor="Gray"
+                Clicked="VerCitas"
+                />
+
+            <Button 
+                Text="Invitaciones"
+                 Image="appoimentok.png"
+                HeightRequest="50"
+                WidthRequest="50"
+                TextColor="Gray"
+                Clicked="InvitadoCitas"
+                />
+
+            <Button 
+                Text="Citas expiradas"
+                 Image="appoimentless.png"
+                HeightRequest="50"
+                WidthRequest="50"
+                TextColor="Gray"
+                Clicked="ExpCitas"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

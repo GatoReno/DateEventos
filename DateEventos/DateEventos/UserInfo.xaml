@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DateEventos.UserInfo">
+    <ContentPage.Content>
+        <StackLayout
+         Margin="10,0,10,0">
+            <Label
+                x:Name="lbl"
+            Margin="0,5,0,0"
+            Text="Datos de usuario"/>
+            <ListView x:Name="listMembers" 
+                      CachingStrategy="RetainElement"
+                      ItemTapped="OnSelected" Margin="0,10,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <StackLayout Spacing="4" HorizontalOptions="Center">
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Label Text="Usuario: "                                       
+                                    FontSize="Small"/>
+
+                                    <Label x:Name="firstName"
+                                    Text="{Binding UserName}"
+                                    FontSize="Small"
+                                    TextColor="Red"/>
+
+
+                                </StackLayout>
+
+
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+
+            <ActivityIndicator
+                IsVisible="False"
+                x:Name="Cator"/>
+            <Image  x:Name="Imgx"
+                        IsVisible="False"
+                        />
+            <Image  x:Name="Imgy"
+                        IsVisible="True"
+                    BackgroundColor="CornflowerBlue"
+                    Source="sign.png"
+                        />
+            <Label Text=""
+                   x:Name="testx"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <ActivityIndicator x:Name="waitActIndicator"/>
+            <Label x:Name="res_x"/>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

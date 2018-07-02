@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DateEventos.AuthPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20,40,20,0">
+
+            <ActivityIndicator x:Name="waitActIndicator"/>
+            <Label Text="Bienvenido a Servicios Conapesca!"
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Ingresa tus datos para continuar "
+               HorizontalOptions="CenterAndExpand"
+                />
+            <Label
+                TextColor="Red"
+                x:Name="res_Label"
+                Margin="0,0,20,0"
+                HorizontalOptions="CenterAndExpand"
+                />
+            <Label
+                TextColor="Red"
+                x:Name="res_Label_api"
+                Margin="0,0,20,0"
+                HorizontalOptions="CenterAndExpand"
+                />
+
+            <Entry x:Name="userTxt"
+                    Placeholder = "User name"/>
+            <Entry x:Name="passTxt"
+                    Placeholder = "Password"
+                   IsPassword="True"/>
+            <Button
+               Clicked="Access_Login"
+                Text = "Ingresar"
+                x:Name="btnAuth"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

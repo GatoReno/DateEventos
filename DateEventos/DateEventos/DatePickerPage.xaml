@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DateEventos.DatePickerPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20,10,20,0">
+            <Label x:Name="fuck"/>
+            <Image Source="appoimentadd.png"
+                   
+                   />
+            <DatePicker
+                x:Name="DTP"/>
+            <TimePicker
+                x:Name="TP"/>
+            <Entry  x:Name="Razon"
+                    Placeholder="Razón de la cita"
+                    />
+            <Entry                  
+                    FontSize="Small"
+                    Text=""      
+                    Placeholder="Descripción de la cita"
+                    x:Name="Descripcion"
+                    />
+            <Label x:Name="lbl"/>
+            <Button 
+                x:Name="Tryx"
+                Text=" Agendar "
+                    Clicked="Tryme"/>
+            <Button 
+                IsVisible="False"
+                Clicked="InvitarUsuarios"
+                x:Name="Invitar"
+                Text="Invitar "
+                    Image="useraddmini.png"/>
+            <Button 
+                Clicked="CrearSolo"
+                IsVisible="False"
+                x:Name="Solo"
+                Text="Solo para mi"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

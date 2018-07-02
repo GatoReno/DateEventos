@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DateEventos.CitaInfo">
+    <ContentPage.Content>
+        <StackLayout Margin="20,0,20,10">
+
+            <Label x:Name="res_x"/>
+            <!--   <ScrollView>
+            </ScrollView> -->
+            <Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Margin="8" x:Name ="lbl_txt" Text="Datos de Cita" FontSize="Large" />
+
+                    <ListView x:Name="ListCitaUnica" Grid.Row="1" HorizontalOptions="FillAndExpand" HasUnevenRows="True" >
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid  Padding="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+
+                                        </Grid.RowDefinitions>
+                                        <Label Text="Razon: " FontSize="Medium" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="0"  FontAttributes="Bold"/>
+                                        <Label Text="{Binding razon}" HorizontalOptions="CenterAndExpand" Grid.Row="2" Grid.Column="1" TextColor="Gray"  FontAttributes="Bold"/>
+
+
+                                        <Label Text="Descripción :" FontSize="Medium" HorizontalOptions="StartAndExpand" Grid.Row="3" Grid.Column="0" FontAttributes="Bold"/>
+                                        <Label Text="{Binding descripcion}" HorizontalOptions="CenterAndExpand" Grid.Row="3" TextColor="Blue"  Grid.Column="1"  FontAttributes="Bold"/>
+
+
+                                        <Label Text="Fecha :" FontSize="Medium" HorizontalOptions="StartAndExpand" Grid.Row="4" Grid.Column="0" FontAttributes="Bold"/>
+                                        <Label Text="{Binding fecha}" HorizontalOptions="CenterAndExpand"  Grid.Row="4" Grid.Column="1" TextColor="Gray"  FontAttributes="Bold"/>
+
+                                        <Label Text="Hora :" FontSize="Medium" HorizontalOptions="StartAndExpand" Grid.Row="5" Grid.Column="0" FontAttributes="Bold"/>
+                                        <Label Text="{Binding hora}" HorizontalOptions="CenterAndExpand" Grid.Row="5" TextColor="Orange"  Grid.Column="1"  FontAttributes="Bold"/>
+
+                                    </Grid>
+                                </ViewCell>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Grid>
+
+            <!-- grid de invitados -->
+            <Grid>
+                <Grid>
+
+                    <ListView x:Name="ListUsers" 
+                      CachingStrategy="RetainElement"
+                      ItemTapped="OnSelected_user"
+
+                      
+                    Margin="10,10,10,10">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+
+                                <ViewCell>
+
+                                    <StackLayout Spacing="4" >
+                                        <StackLayout Orientation="Horizontal">
+
+                                            <Label Text="Invitado: "  FontSize="Small"/>
+                                            <Label x:Name="nxn"
+                                            Text="{Binding nombre }"
+                                            FontSize="Small"
+                                            TextColor="Red"/>
+
+
+                                        </StackLayout>
+
+
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </Grid>
+            </Grid>
+
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*" />
+
+                </Grid.ColumnDefinitions>
+                <Button 
+                    Grid.Row="0" Grid.Column="1"
+                WidthRequest="150" 
+                Image="useraddmini.png"
+                Text="Invitar"
+                Clicked="InvitarUsers"/>
+               
+                <Button 
+                    Grid.Row="0" Grid.Column="0"
+                WidthRequest="150" 
+                Image="appoimentadd.png"
+                Text="Actualizar"/>
+
+            </Grid>
+
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*" />
+
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="1" Grid.Column="0"
+                Image="appoimentless.png"
+                 WidthRequest="150" 
+                Text="Borrar"
+                Clicked="BorrarEvento"/>
+                <Button 
+                  Grid.Row="1" Grid.Column="1"  
+                WidthRequest="150" 
+                Image="hour.png"
+                Text="Detener"
+                    x:Name="btnAlarm"
+                 />
+
+            </Grid>
+
+           <!-- <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*" />
+
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="1" Grid.Column="0"
+                Image="appoimentless.png"
+                 WidthRequest="150" 
+                Text="Try"
+                Clicked="RingAlarm"/>
+            </Grid>
+          -->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DateEventos.PageNav">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="User"
+            Activated="ToolbarItem_Appoi"
+            Icon="appoiment.png"
+            />
+
+        <ToolbarItem
+            Text="Isntrucciones"
+            Activated="ToolbarItem_InfoUser"
+            Icon="user.png"
+            />
+
+    </ContentPage.ToolbarItems>
+    <StackLayout   Margin="20,10,20,20">
+        <Grid>
+            <Label Text="Mantente al día"
+                x:Name="res_x"
+               />
+        </Grid>
+
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Label x:Name="Pend" Grid.Row="0" Grid.Column="1"  FontSize="Small"  TextColor="Accent" />
+            <Label x:Name="Deta" Grid.Row="0" Grid.Column="0" Text="Ordenes pendientes" FontSize="Small" TextColor="Black"  />
+            <Image x:Name="pendim" Grid.Column="2" Source="appoimentgrey50.png" Grid.Row="0"
+                >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="GoPendientes"
+                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+
+            </Image>
+        </Grid>
+        <!--<Button Text="Try"
+                Clicked="CheckCitas"/>-->
+
+     
+    </StackLayout>
+</ContentPage>
